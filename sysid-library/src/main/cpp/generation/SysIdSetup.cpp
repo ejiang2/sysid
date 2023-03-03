@@ -80,7 +80,7 @@ void AddMotorController(
         dynamic_cast<WPI_BaseMotorController*>(controllers->back().get());
     ctreController->ConfigFactoryDefault();
     ctreController->SetInverted(inverted);
-    ctreController->SetNeutralMode(motorcontrol::NeutralMode::Brake);
+    ctreController->SetNeutralMode(motorcontrol::NeutralMode::Coast);
   } else if (controller == "TalonFX (Pro)") {
     fmt::print("Setup TalonFX (Pro)\n");
     controllers->emplace_back(std::make_unique<hardware::TalonFX>(
